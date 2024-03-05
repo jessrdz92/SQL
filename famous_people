@@ -1,0 +1,40 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE famous_people 
+("Actors_Name" TEXT,
+"Age" INTEGER);
+
+INSERT INTO famous_people
+    ("Actors_Name", "Age")
+VALUES ("Zendaya",26);
+INSERT INTO famous_people
+    ("Actors_Name", "Age")
+VALUES ("Tom Holland",27);
+INSERT INTO famous_people
+    ("Actors_Name", "Age")
+VALUES ("Jacob Elordi", 24);
+INSERT INTO famous_people
+    ("Actors_Name", "Age")
+VALUES ("Seth Rogan",42);
+
+CREATE TABLE movies
+("Movie_Title" TEXT,
+"Actors_Name" TEXT);
+
+INSERT INTO movies
+    ("Movie_Title", "Actors_Name")
+VALUES ("Euphoria", "Zendaya");
+INSERT INTO movies
+    ("Movie_Title", "Actors_Name")
+VALUES ("Spider Man","Tom Holland");
+INSERT INTO movies
+    ("Movie_Title", "Actors_Name")
+VALUES ("Saltburn", "Jacob Elordi");
+INSERT INTO movies
+    ("Movie_Title", "Actors_Name")
+VALUES ("Pineapple Express", "Seth Rogan");
+
+SELECT famous_people.Actors_Name, movies.Movie_Title
+FROM famous_people 
+JOIN movies
+ON famous_people.Actors_Name=movies.Actors_Name;
