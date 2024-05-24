@@ -1,0 +1,27 @@
+
+SELECT *
+FROM chinook.artists;
+
+SELECT FirstName, LastName, Customerid, country
+FROM chinook.customers
+WHERE country <> 'USA';
+
+SELECT FirstName, LastName, Customerid, country
+FROM chinook.customers
+WHERE country = 'Brazil';
+
+SELECT cust.FirstName, cust.LastName, inv.InvoiceId, inv.BillingCountry, inv.InvoiceDate
+FROM chinook.invoices as inv
+LEFT JOIN chinook.customers as cust
+on inv.CustomerId = cust.CustomerId
+WHERE inv.BillingCountry="Brazil";
+
+SELECT *
+FROM chinook.employees;
+
+SELECT LastName, FirstName ,title
+FROM chinook.employees
+WHERE title = 'Sales Support Agent';
+
+SELECT DISTINCT BillingCountry
+FROM chinook.invoices;
